@@ -12,7 +12,6 @@ const Heading = styled.h1`
 `;
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   const hotsBlogs = data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.group === 'hots').slice(0, 3);
   const csgoBlogs = data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.group === 'csgo').slice(0, 3);
   const hotsLogo = data.hotsLogo.resolutions;

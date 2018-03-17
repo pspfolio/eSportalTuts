@@ -58,7 +58,6 @@ const BackToTopArrow = styled.svg`
 `;
 
 const TemplateWrapper = ({ children, data }) => {
-  console.log(data);
   return (
     <div>
       <Img

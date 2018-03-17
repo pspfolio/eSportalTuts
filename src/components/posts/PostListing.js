@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import Chips from '../chips/ChipsList';
 
 const titles = {
   hots: 'Heroes of the Storm',
@@ -53,20 +54,6 @@ const Snippet = styled.p`
   margin: 0;
 `;
 
-const Chips = styled.div`
-  margin-top: 20px;
-`;
-
-const Chip = styled.div`
-  border-radius: 16px;
-  padding: 5px 15px;
-  background-color: ${props => (props.title === 'hots' ? '#5f4488' : '#ff7800')};
-  font-size: 0.8rem;
-  display: inline;
-  margin-right: 10px;
-  color: white;
-`;
-
 const Footer = styled.p`
   margin: 0;
   position: absolute;
@@ -83,7 +70,6 @@ const GameTitle = styled.span`
 `;
 
 const PostListing = ({ post, group }) => {
-  console.log(post.frontmatter);
   return (
     <ArticleCard>
       <ImageSection>
@@ -94,14 +80,7 @@ const PostListing = ({ post, group }) => {
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </CardHeader>
         <Snippet>{post.frontmatter.snippet}</Snippet>
-        <Chips>
-          {post.frontmatter.tags &&
-            post.frontmatter.tags.map(tag => (
-              <Chip key={tag} title={group}>
-                {tag}
-              </Chip>
-            ))}
-        </Chips>
+        <Chips tags={post.frontmatter.tags} group={group} />
         <Footer>
           <GameTitle title={group}>{titles[group]}</GameTitle> <Author>- {post.frontmatter.author}</Author>
         </Footer>
