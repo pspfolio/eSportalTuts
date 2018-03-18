@@ -12,7 +12,7 @@ const GroupHeader = styled.div`
 `;
 
 const GroupTitle = styled.h2`
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 1rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);

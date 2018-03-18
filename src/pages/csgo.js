@@ -1,17 +1,66 @@
 import React from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import PostListing from '../components/posts/PostListing';
 
-const Csgo = () => (
-  <div>
-    <h1>CS:GO</h1>
-    <p>
-      Beard roof party cardigan locavore you probably haven't heard of them squid artisan edison bulb whatever normcore
-      jianbing succulents. Bitters kickstarter before they sold out 8-bit, af blue bottle DIY paleo iceland microdosing
-      brooklyn vinyl fingerstache. Gentrify adaptogen raw denim heirloom. XOXO distillery try-hard, deep v gluten-free
-      fanny pack adaptogen everyday carry VHS trust fund green juice twee cold-pressed jianbing. Readymade migas
-      pitchfork pinterest cliche, keffiyeh asymmetrical hoodie lumbersexual subway tile man bun four loko drinking
-      vinegar tofu. YOLO pinterest try-hard pok pok echo park tacos.
-    </p>
-  </div>
-);
+const Heading = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export default Csgo;
+const Title = styled.h1`
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-left: 20px;
+`;
+
+const Hots = ({ data }) => {
+  return (
+    <div>
+      <Heading>
+        <Img resolutions={data.csgoLogo.resolutions} />
+        <Title>Counter-Strike Global Offensive</Title>
+      </Heading>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <PostListing key={node.frontmatter.title} post={node} group="csgo" />
+      ))}
+    </div>
+  );
+};
+
+export default Hots;
+
+export const query = graphql`
+  query Csgo {
+    allMarkdownRemark(
+      limit: 1000
+      filter: { frontmatter: { group: { eq: "csgo" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            group
+            snippet
+            tags
+            author
+            img
+            attachments {
+              publicURL
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+    csgoLogo: imageSharp(id: { regex: "/csgo-logo.png/" }) {
+      resolutions(width: 101) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+  }
+`;

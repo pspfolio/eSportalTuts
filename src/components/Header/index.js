@@ -99,11 +99,6 @@ const Header = ({ data }) => (
               CS:GO
             </Link>
           </li>
-          <li>
-            <Link to="/iracing" activeClassName="active">
-              iRacing
-            </Link>
-          </li>
         </ListContainer>
       </Navigation>
     </HeaderContainer>
