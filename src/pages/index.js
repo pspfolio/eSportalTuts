@@ -13,8 +13,7 @@ const Heading = styled.h1`
 
   @media ${device.tablet} {
     font-size: 1.5rem;
-    margin: 20px 0;
-    text-align: center;
+    margin: 20px 0 20px 20px;
   }
 `;
 

@@ -1,32 +1,32 @@
 module.exports = {
   siteMetadata: {
-    title: 'eSportal tutorials',
-    desc: 'A new blog'
+    title: "eSportal tutorials",
+    desc: "A new blog"
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'img',
+        name: "img",
         path: `${__dirname}/src/images`
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'src',
+        name: "src",
         path: `${__dirname}/src/`
       }
     },
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: ['roboto']
+        fonts: ["roboto"]
       }
     },
-    'gatsby-plugin-sharp',
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -34,16 +34,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 700,
-              backgroundColor: '#212121'
+              backgroundColor: "#212121"
             }
           }
         ]
       }
     },
-    'gatsby-transformer-sharp'
+    "gatsby-transformer-sharp"
   ]
 };

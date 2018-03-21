@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import ChipsList from "../components/chips/ChipsList";
+import device from "../constants/mediaSizes";
 
 const Articel = styled.article`
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
   overflow: hidden;
+
+  @media ${device.tablet} {
+    padding: 20px;
+  }
 `;
 
 const Title = styled.h1`
@@ -40,6 +45,7 @@ const ArticleContent = styled.div`
 
   img {
     margin: 2rem 0;
+    width: 100%;
   }
 
   ul {
