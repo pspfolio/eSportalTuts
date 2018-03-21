@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import ChipsList from '../components/chips/ChipsList';
+import React, { Component } from "react";
+import styled from "styled-components";
+import ChipsList from "../components/chips/ChipsList";
 
 const Articel = styled.article`
   width: 700px;
@@ -62,7 +62,6 @@ const ArticleContent = styled.div`
 
 class PostPage extends Component {
   render() {
-    console.log('ARTICEL', this.props.data);
     const { data } = this.props;
     const frontmatter = this.props.data.markdownRemark.frontmatter;
     return (
@@ -72,7 +71,9 @@ class PostPage extends Component {
         <SubTitle>{frontmatter.snippet}</SubTitle>
         <ChipsList tags={frontmatter.tags} group={frontmatter.group} />
 
-        <PostedDate>Posted in Heroes of the Storm by Peppe - March 3, 2018</PostedDate>
+        <PostedDate>
+          Posted in Heroes of the Storm by Peppe - March 3, 2018
+        </PostedDate>
         <ArticleContent
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark.html

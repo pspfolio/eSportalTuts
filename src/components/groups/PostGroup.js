@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import PostListing from '../posts/PostListing';
-import Img from 'gatsby-image';
+import React from "react";
+import styled from "styled-components";
+import PostListing from "../posts/PostListing";
+import Img from "gatsby-image";
+import device from "../../constants/mediaSizes";
 
 const GroupHeader = styled.div`
   font-size: 1rem;
@@ -9,6 +10,10 @@ const GroupHeader = styled.div`
   color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
+
+  @media ${device.tablet} {
+    margin-left: 20px;
+  }
 `;
 
 const GroupTitle = styled.h2`
@@ -24,7 +29,13 @@ const PostGroup = ({ data, groupName, title, logo }) => {
       <GroupHeader>
         <Img resolutions={logo} /> <GroupTitle>in {title}</GroupTitle>
       </GroupHeader>
-      {data.map(({ node }) => <PostListing key={node.frontmatter.title} post={node} group={groupName} />)}
+      {data.map(({ node }) => (
+        <PostListing
+          key={node.frontmatter.title}
+          post={node}
+          group={groupName}
+        />
+      ))}
     </div>
   );
 };

@@ -1,9 +1,10 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import React from "react";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import device from "../../constants/mediaSizes";
 
-import logo from '../../images/logo.svg';
+import logo from "../../images/logo.svg";
 
 const HeaderWrapper = styled.div`
   height: 70px;
@@ -12,6 +13,11 @@ const HeaderWrapper = styled.div`
   width: 100%;
   border-bottom: 1px solid #38393c;
   position: relative;
+
+  @media ${device.tablet} {
+    height: 45px;
+    margin-bottom: 45px;
+  }
 `;
 const HeaderContainer = styled.div`
   max-width: 1060px;
@@ -23,6 +29,10 @@ const HeaderContainer = styled.div`
 
   h1 {
     font-size: 1rem;
+  }
+
+  @media ${device.tablet} {
+    justify-content: center;
   }
 `;
 
@@ -55,7 +65,7 @@ const ListContainer = styled.ul`
       &.active {
         color: rgb(255, 255, 255);
         &:after {
-          content: '';
+          content: "";
           height: 4px;
           background-color: #00e871;
           position: absolute;
@@ -66,6 +76,10 @@ const ListContainer = styled.ul`
       }
     }
   }
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const Header = ({ data }) => (
@@ -75,8 +89,8 @@ const Header = ({ data }) => (
         <Link
           to="/"
           style={{
-            color: 'white',
-            textDecoration: 'none'
+            color: "white",
+            textDecoration: "none"
           }}
         >
           eSportal Tutorials

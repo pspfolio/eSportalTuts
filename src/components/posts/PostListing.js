@@ -1,11 +1,12 @@
-import React from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-import Chips from '../chips/ChipsList';
+import React from "react";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import Chips from "../chips/ChipsList";
+import device from "../../constants/mediaSizes";
 
 const titles = {
-  hots: 'Heroes of the Storm',
-  csgo: 'Counter-Strike Global Offensive'
+  hots: "Heroes of the Storm",
+  csgo: "Counter-Strike Global Offensive"
 };
 
 const ArticleCard = styled.article`
@@ -23,6 +24,11 @@ const ArticleCard = styled.article`
   &:hover {
     box-shadow: -6px 6px 15.04px 0.96px rgba(0, 0, 0, 0.42);
   }
+
+  @media ${device.tablet} {
+    display: flex;
+    margin: 0 20px 20px 20px;
+  }
 `;
 
 const ImageSection = styled.div`
@@ -30,10 +36,14 @@ const ImageSection = styled.div`
   height: 100%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const ContentSection = styled.div`
-  margin-left: 25px;
+  margin: 0 25px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -66,7 +76,7 @@ const Author = styled.span`
 `;
 
 const GameTitle = styled.span`
-  color: ${props => (props.title === 'hots' ? '#5f4488' : '#ff7800')};
+  color: ${props => (props.title === "hots" ? "#5f4488" : "#ff7800")};
 `;
 
 const PostListing = ({ post, group }) => {
@@ -82,7 +92,8 @@ const PostListing = ({ post, group }) => {
         <Snippet>{post.frontmatter.snippet}</Snippet>
         <Chips tags={post.frontmatter.tags} group={group} />
         <Footer>
-          <GameTitle title={group}>{titles[group]}</GameTitle> <Author>- {post.frontmatter.author}</Author>
+          <GameTitle title={group}>{titles[group]}</GameTitle>{" "}
+          <Author>- {post.frontmatter.author}</Author>
         </Footer>
       </ContentSection>
     </ArticleCard>
