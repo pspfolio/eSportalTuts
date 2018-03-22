@@ -43,4 +43,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices a ur
 ## How to lane push effectively
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices a urna non pharetra. Utadawdasd lobortis neque et sapien eleifend, non suscipit elit posuere. Fusce eget porta tortor, nec mattis nibh. Nulla ligula tortor, tempor quis enim in, commodo gravida nibh. Aenean sodales aliquam nisl, non sollicitudin urna tristique a. Sed vulputate ante a augue tempus bibendum non eget diam.
-![Select2 Logo animation](https://i.imgur.com/QYv2bEQ.gif)
+![Select2 Logo animation](https://thumbs.gfycat.com/EllipticalDifficultAbalone-size_restricted.gif)
