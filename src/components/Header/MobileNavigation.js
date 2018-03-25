@@ -19,6 +19,8 @@ const ListContainer = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
 
   li {
     margin: 2em 0;
