@@ -27,7 +27,6 @@ const ArticleCard = styled.article`
 
   @media ${device.tablet} {
     display: flex;
-    margin: 0 20px 20px 20px;
   }
 `;
 

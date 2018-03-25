@@ -3,19 +3,7 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import PostListing from "../components/posts/PostListing";
 import PostGroup from "../components/groups/PostGroup";
-import device from "../constants/mediaSizes";
-
-const Heading = styled.h1`
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-bottom: 50px;
-
-  @media ${device.tablet} {
-    font-size: 1.5rem;
-    margin: 20px 0 20px 20px;
-  }
-`;
+import PageTitle from "../components/PageTitle/PageTitle";
 
 const IndexPage = ({ data }) => {
   const hotsBlogs = data.allMarkdownRemark.edges
@@ -28,7 +16,7 @@ const IndexPage = ({ data }) => {
   const csgoLogo = data.csgoLogo.resolutions;
   return (
     <div>
-      <Heading>New tutorials</Heading>
+      <PageTitle>New tutorials</PageTitle>
       <PostGroup
         data={hotsBlogs}
         logo={hotsLogo}

@@ -10,10 +10,6 @@ const GroupHeader = styled.div`
   color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
-
-  @media ${device.tablet} {
-    margin-left: 20px;
-  }
 `;
 
 const GroupTitle = styled.h2`

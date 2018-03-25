@@ -26,6 +26,7 @@ const ContentWrapper = styled.main`
   margin: 0 auto;
   max-width: 1060px;
   position: relative;
+  padding: 0 20px;
 `;
 
 const Footer = styled.div`

@@ -7,10 +7,6 @@ const Articel = styled.article`
   max-width: 700px;
   margin: 0 auto;
   overflow: hidden;
-
-  @media ${device.tablet} {
-    padding: 20px;
-  }
 `;
 
 const Title = styled.h1`

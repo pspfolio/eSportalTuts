@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import PostListing from '../components/posts/PostListing';
+import React from "react";
+import styled from "styled-components";
+import GamePageHeader from "../components/GamePageHeader/GamePageHeader";
+import PostListing from "../components/posts/PostListing";
 
 const Heading = styled.div`
   display: flex;
@@ -18,10 +18,10 @@ const Title = styled.h1`
 const Hots = ({ data }) => {
   return (
     <div>
-      <Heading>
-        <Img resolutions={data.csgoLogo.resolutions} />
-        <Title>Counter-Strike Global Offensive</Title>
-      </Heading>
+      <GamePageHeader
+        title={"Counter-Strike Global Offensive"}
+        resolutions={data.csgoLogo.resolutions}
+      />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostListing key={node.frontmatter.title} post={node} group="csgo" />
       ))}

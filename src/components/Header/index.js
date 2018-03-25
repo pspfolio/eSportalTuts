@@ -30,6 +30,7 @@ const HeaderContainer = styled.div`
   position: relative;
   h1 {
     font-size: 1rem;
+    margin-left: 20px;
 
     a {
       color: white;
@@ -67,7 +68,7 @@ class Header extends Component {
       <HeaderWrapper>
         <HeaderContainer>
           <MobileNavIcon openMobileNavigation={this.handleMobileNavOpen} />
-          <h1 style={{ margin: 0 }}>
+          <h1>
             <Link to="/">eSportal Tutorials</Link>
           </h1>
 

@@ -1,27 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import PostListing from '../components/posts/PostListing';
+import React from "react";
+import styled from "styled-components";
+import PostListing from "../components/posts/PostListing";
+import GamePageHeader from "../components/GamePageHeader/GamePageHeader";
 
 const Heading = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const Title = styled.h1`
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-left: 20px;
+const ImgWrapper = styled.div`
+  display: inline-block;
+  margin-right: 20px;
 `;
 
 const Hots = ({ data }) => {
   return (
     <div>
-      <Heading>
-        <Img resolutions={data.hotsLogo.resolutions} />
-        <Title>Heroes of the Storm</Title>
-      </Heading>
+      <GamePageHeader
+        title={"Heroes Of The Storm"}
+        resolutions={data.hotsLogo.resolutions}
+      />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <PostListing key={node.frontmatter.title} post={node} group="hots" />
       ))}
