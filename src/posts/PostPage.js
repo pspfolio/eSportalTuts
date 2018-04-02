@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import ChipsList from "../components/chips/ChipsList";
-import device from "../constants/mediaSizes";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import ChipsList from '../components/chips/ChipsList';
+import device from '../constants/mediaSizes';
 
 const Articel = styled.article`
   max-width: 700px;
@@ -40,11 +40,7 @@ const ArticleContent = styled.div`
   }
 
   img {
-<<<<<<< HEAD
     margin: 0.5rem 0 2rem 0;
-=======
-    margin: 2rem 0;
->>>>>>> 82e96799e4a12c685c96f6bdf99ddc6cd1d71b19
     width: 100%;
   }
 
@@ -77,9 +73,7 @@ class PostPage extends Component {
         <SubTitle>{frontmatter.snippet}</SubTitle>
         <ChipsList tags={frontmatter.tags} group={frontmatter.group} />
 
-        <PostedDate>
-          Posted in Heroes of the Storm by Peppe - March 3, 2018
-        </PostedDate>
+        <PostedDate>Posted in Heroes of the Storm by Peppe - March 3, 2018</PostedDate>
         <ArticleContent
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark.html
