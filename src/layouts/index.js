@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import device from "../constants/mediaSizes";
 
-import Header from '../components/Header';
-import './index.css';
+import Header from "../components/Header";
+import "./index.css";
 
 const BgImage = styled(Img)`
   position: absolute;
@@ -17,7 +18,7 @@ const BgImage = styled(Img)`
 `;
 
 const BodyWrapper = styled.div`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   min-height: 100vh;
 `;
 
@@ -25,10 +26,11 @@ const ContentWrapper = styled.main`
   margin: 0 auto;
   max-width: 1060px;
   position: relative;
+  padding: 0 20px;
 `;
 
 const Footer = styled.div`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   height: 200px;
   border-top: 1px solid #3c3c3c;
 `;
@@ -42,6 +44,10 @@ const FooterContent = styled.div`
   font-size: 10px;
   color: #5a5a5a;
   justify-content: space-between;
+
+  @media ${device.tablet} {
+    padding: 0 20px;
+  }
 `;
 
 const FooterBackToTop = styled.div`
@@ -62,11 +68,11 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Img
         style={{
-          position: 'absolute',
+          position: "absolute",
           left: 0,
           top: 0,
-          width: '100%',
-          height: '100%',
+          width: "100%",
+          height: "100%",
           zIndex: 0
         }}
         sizes={data.background.sizes}
@@ -74,14 +80,19 @@ const TemplateWrapper = ({ children, data }) => {
       <BodyWrapper>
         <Helmet
           title="Gatsby Default Starter"
-          meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
+          meta={[
+            { name: "description", content: "Sample" },
+            { name: "keywords", content: "sample, something" }
+          ]}
         />
         <Header data={data} />
         <ContentWrapper>{children()}</ContentWrapper>
       </BodyWrapper>
       <Footer>
         <FooterContent>
-          <p>@Copyright eSportal {new Date().getFullYear()}. All rights reserved.</p>
+          <p>
+            @Copyright eSportal {new Date().getFullYear()}. All rights reserved.
+          </p>
           <FooterBackToTop onClick={() => window.scrollTo(0, 0)}>
             <p>BACK TO TOP</p>
             <BackToTopArrow viewBox="0 0 22 22">
