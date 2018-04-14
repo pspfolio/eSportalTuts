@@ -51,7 +51,7 @@ Gif of the Coffing smoke
 
 ## The CT smoke
 
-Idea of this smoke is cut the vision from the CT base and B bomb site. This smoke is really easy to throw so use it!
+Idea of this smoke is cut the vision between the CT base and B bomb site. This smoke is really easy to throw so use it!
 
 Run towards a corner where the broom is. This wall is also commonly called as Trump wall.
 ![Align with the broom](https://i.imgur.com/k53LV31.jpg)
